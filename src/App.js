@@ -5,6 +5,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>Weather React App</h1>
+        <button className="btn btn-success">bootstrap</button>
       </header>
       <footer>
         this project was coded by{" "}
