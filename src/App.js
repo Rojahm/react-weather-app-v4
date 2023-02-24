@@ -12,6 +12,7 @@ function App() {
           href="https://cool-starship-bcbb97.netlify.app/"
           target="_blank"
           rel="noreferrer"
+          className="App-link"
         >
           Ro?a
         </a>{" "}
@@ -20,6 +21,7 @@ function App() {
           href="https://github.com/Rojahm/react-weather-app-v4"
           target="_blank"
           rel="noreferrer"
+          className="App-link"
         >
           open-sourced
         </a>
