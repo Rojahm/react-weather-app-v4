@@ -1,4 +1,5 @@
 import "./App.css";
+import Weather from "./Weather";
 
 function App() {
   return (
@@ -7,10 +8,7 @@ function App() {
         <header className="App-header">
           <h1>Weather React App</h1>
         </header>
-        <form>
-          <input type="submit" className="btn btn-primary" value="submit" />
-        </form>
-        <button className="btn btn-primary">bootstrap</button>
+        <Weather />
         <footer>
           this project was coded by{" "}
           <a

@@ -1,0 +1,69 @@
+.Weather {
+}
+.Weather ul {
+  list-style: none;
+  padding: 0;
+}
+.Weather .weather-details {
+  display: flex;
+}
+.Weather .icon {
+  padding-right: 0;
+}
+.Weather .unit {
+  display: flex;
+  font-family: arial, sans-serif;
+  color: #e8eaed;
+  font-size: 16px;
+  line-height: 24px;
+}
+.Weather .unit a {
+  color: #e8eaed;
+  text-decoration: none;
+}
+
+.Weather .detail-list {
+  font-size: 12px;
+  padding-left: 12px;
+  color: #96a0a6;
+}
+.Weather .city {
+  text-align: end;
+  color: #e8eaed;
+  font-size: 22px;
+  line-height: 26px;
+  font-family: Google Sans, arial, sans-serif;
+  font-weight: 400;
+}
+.Weather .city ul {
+  color: #9aa0a6;
+  font-size: 16px;
+  line-height: 20px;
+}
+.Weather h2 {
+  font-size: 48px;
+  line-height: 56px;
+  display: inline;
+  font-weight: 400;
+}
+.Weather h3 {
+  margin: 0;
+}
+.Weather .weather-menu {
+  display: flex;
+}
+.Weather .weather-menu-item {
+  color: #bdc1c6;
+  font-size: 14px;
+  line-height: 1.58;
+  cursor: pointer;
+}
+.Weather .weather-menu-item:visited {
+  border-bottom: 3px solid #fdd663;
+  cursor: default;
+  padding-bottom: 4px;
+}
+.Weather .weather-menu-border {
+  border-left: 1px solid #3c4043;
+  margin: 0 11px;
+}
