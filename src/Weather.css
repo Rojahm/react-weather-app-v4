@@ -11,8 +11,10 @@
 .Weather .weather-details {
   display: flex;
 }
-.Weather .icon {
+.Weather .icon img {
   padding-right: 0;
+  width: 70px;
+  height: 70px;
 }
 .Weather .temp {
   font-size: 48px;
@@ -20,8 +22,6 @@
   font-family: Google Sans, arial, sans-serif;
 }
 .Weather .unit {
-  position: relative;
-  top: -16px;
   font-family: arial, sans-serif;
   color: #e8eaed;
   font-size: 16px;
@@ -33,9 +33,6 @@
 }
 
 .Weather .detail-list {
-  position: relative;
-  top: -3px;
-  align-self: center;
   font-size: 12px;
   padding-left: 12px;
   color: #96a0a6;

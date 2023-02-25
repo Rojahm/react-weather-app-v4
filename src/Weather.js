@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Weather.css";
+import axios from "axios";
 
 function Weather() {
   let form = (
@@ -8,52 +9,81 @@ function Weather() {
       <input type={"submit"} className="btn btn-dark" value="Search" />
     </form>
   );
-  return (
-    <div className="Weather">
-      {form}
-      <div className="row">
-        <div className="col">
-          <div className="weather-details">
-            <div className="icon">
-              <img
-                src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png"
-                alt="weather icon"
-              />
-            </div>
-            <div className="temp">
-              <h2 className="px-2">2</h2>
-            </div>
-            <div className="unit align-self-center">
-              <span>°C</span>
-              <span>|</span>
-              <span>°F</span>
-            </div>
-            <div className="detail-list">
-              <ul>
-                <li>Precipitation: 17%</li>
-                <li>Humidity: 92%</li>
-                <li>Wind: 21 km/h</li>
-              </ul>
+
+  const [weatherData, setWeatherData] = useState({ ready: false });
+
+  function handleResponse(response) {
+    console.log(response.data);
+    setWeatherData({
+      ready: true,
+      city: response.data.city,
+      country: response.data.country,
+      description: response.data.condition.description,
+      icon_url: response.data.condition.icon_url,
+      temp: Math.round(response.data.temperature.current),
+      humidity: response.data.temperature.humidity,
+      wind: response.data.wind.speed,
+    });
+  }
+
+  if (weatherData.ready) {
+    return (
+      <div className="Weather">
+        {form}
+        <div className="row">
+          <div className="col">
+            <div className="weather-details">
+              <div className="icon">
+                <img src={weatherData.icon_url} alt="weather icon" />
+              </div>
+              <div className="temp">
+                <h2 className="px-2">{weatherData.temp}</h2>
+              </div>
+              <div className="unit">
+                <span>°C</span>
+                <span>|</span>
+                <span>°F</span>
+              </div>
+              <div className="detail-list">
+                <ul>
+                  <li>Humidity: {weatherData.humidity}%</li>
+                  <li>Wind: {weatherData.wind} km/h</li>
+                </ul>
+              </div>
             </div>
           </div>
+          <div className="col city">
+            <h3>
+              {weatherData.city}, {weatherData.country}
+            </h3>
+            <ul>
+              <li>Friday 16:00</li>
+              <li>{weatherData.description}</li>
+            </ul>
+          </div>
         </div>
-        <div className="col city">
-          <h3>Berlin, Germany</h3>
-          <ul>
-            <li>Friday 16:00</li>
-            <li>Cloudy</li>
-          </ul>
-        </div>
-      </div>
-      <div className="weather-menu">
-        <div className="weather-menu-item">Temperature</div>
-        <span className="weather-menu-border"> </span>
-        <div className="weather-menu-item">Humidity</div>
+        <div className="weather-menu">
+          <div className="weather-menu-item">Temperature</div>
+          <span className="weather-menu-border"> </span>
+          <div className="weather-menu-item">Humidity</div>
 
-        <span className="weather-menu-border"> </span>
-        <div className="weather-menu-item">Wind</div>
+          <span className="weather-menu-border"> </span>
+          <div className="weather-menu-item">Wind</div>
+        </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    const key = "a7c7f51a8a5abc24e0tb69o4ff6018a3";
+    let unit = "metric";
+    let city = "berlin";
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${key}&units=${unit}`;
+
+    axios.get(apiUrl).then(handleResponse);
+    return (
+      <div className="Weather">
+        <h3>Loading...</h3>
+      </div>
+    );
+  }
 }
 export default Weather;
