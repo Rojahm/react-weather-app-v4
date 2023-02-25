@@ -1,4 +1,6 @@
 .Weather {
+  max-width: 800px;
+  margin: 0 auto;
 }
 .Weather ul {
   list-style: none;

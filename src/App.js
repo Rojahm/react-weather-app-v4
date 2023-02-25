@@ -6,7 +6,7 @@ function App() {
     <div className="App">
       <div className="container">
         <header className="App-header">
-          <h1>Weather React App</h1>
+          <h1 className="text-center py-3">Weather React App</h1>
         </header>
         <Weather />
         <footer>
