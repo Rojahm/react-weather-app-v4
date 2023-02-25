@@ -20,9 +20,13 @@ function Weather() {
                 alt="weather icon"
               />
             </div>
-            <div className="unit">
+            <div className="temp">
               <h2 className="px-2">2</h2>
-              <span>°C|°F</span>
+            </div>
+            <div className="unit align-self-center">
+              <span>°C</span>
+              <span>|</span>
+              <span>°F</span>
             </div>
             <div className="detail-list">
               <ul>
