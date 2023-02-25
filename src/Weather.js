@@ -2,8 +2,15 @@ import React from "react";
 import "./Weather.css";
 
 function Weather() {
+  let form = (
+    <form className="input-group mb-3">
+      <input type={"search"} autoFocus="on" className="form-control" />
+      <input type={"submit"} className="btn btn-dark" value="Search" />
+    </form>
+  );
   return (
     <div className="Weather">
+      {form}
       <div className="row">
         <div className="col">
           <div className="weather-details">
