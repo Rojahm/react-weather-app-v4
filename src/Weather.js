@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Weather.css";
 import axios from "axios";
 import FormatDate from "./FormatDate";
+import CircleLoader from "react-spinners/CircleLoader";
 
 function Weather() {
   let form = (
@@ -85,6 +86,7 @@ function Weather() {
     axios.get(apiUrl).then(handleResponse);
     return (
       <div className="Weather">
+        <CircleLoader color="#36d7b7" />
         <h3>Loading...</h3>
       </div>
     );
