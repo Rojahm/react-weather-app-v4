@@ -8,7 +8,7 @@ function App() {
         <header className="App-header">
           <h1 className="text-center py-3">Weather React App</h1>
         </header>
-        <Weather />
+        <Weather city="berlin" />
         <footer>
           this project was coded by{" "}
           <a
