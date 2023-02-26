@@ -36,14 +36,13 @@ function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
 
   function handleResponse(response) {
-    console.log(response.data);
     setWeatherData({
       ready: true,
       city: response.data.city,
       country: response.data.country,
       date: new Date(response.data.time * 1000),
       description: response.data.condition.description,
-      icon_url: response.data.condition.icon_url,
+      icon: response.data.condition.icon,
       temp: Math.round(response.data.temperature.current),
       humidity: response.data.temperature.humidity,
       wind: response.data.wind.speed,

@@ -11,7 +11,9 @@
 .Weather .weather-details {
   display: flex;
 }
-.Weather .icon img {
+.Weather .icon canvas {
+  position: relative;
+  top: -8px;
   padding-right: 0;
   width: 70px;
   height: 70px;
