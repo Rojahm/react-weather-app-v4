@@ -5,9 +5,30 @@ import CircleLoader from "react-spinners/CircleLoader";
 import Info from "./Info";
 
 function Weather(props) {
+  const [city, setCity] = useState(props.city);
+
+  function search() {
+    const key = "a7c7f51a8a5abc24e0tb69o4ff6018a3";
+    let unit = "metric";
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${key}&units=${unit}`;
+
+    axios.get(apiUrl).then(handleResponse);
+  }
+  function handleSubmit(event) {
+    event.preventDefault();
+    search(city);
+  }
+  function handleCity(event) {
+    setCity(event.target.value);
+  }
   let form = (
-    <form className="input-group mb-3">
-      <input type={"search"} autoFocus="on" className="form-control" />
+    <form className="input-group mb-3" onSubmit={handleSubmit}>
+      <input
+        type={"search"}
+        autoFocus="on"
+        className="form-control"
+        onChange={handleCity}
+      />
       <input type={"submit"} className="btn btn-dark" value="Search" />
     </form>
   );
@@ -37,12 +58,7 @@ function Weather(props) {
       </div>
     );
   } else {
-    const key = "a7c7f51a8a5abc24e0tb69o4ff6018a3";
-    let unit = "metric";
-    let city = props.city;
-    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${key}&units=${unit}`;
-
-    axios.get(apiUrl).then(handleResponse);
+    search(city);
     return (
       <div className="Weather">
         <CircleLoader color="#36d7b7" />
