@@ -7,7 +7,7 @@ export default function Info(props) {
   return (
     <div className="Info">
       <div className="row">
-        <div className="col">
+        <div className="col-8">
           <div className="weather-details">
             <div className="icon">
               <WeatherIcon
@@ -25,7 +25,7 @@ export default function Info(props) {
             </div>
           </div>
         </div>
-        <div className="col city">
+        <div className="col-4 city">
           <h3>
             {props.data.city}, {props.data.country}
           </h3>
