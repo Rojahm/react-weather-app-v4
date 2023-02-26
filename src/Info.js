@@ -1,6 +1,7 @@
 import React from "react";
 import FormatDate from "./FormatDate";
 import WeatherIcon from "./WeatherIcon";
+import UnitConversion from "./UnitConversion";
 
 export default function Info(props) {
   return (
@@ -14,14 +15,8 @@ export default function Info(props) {
                 alt={props.data.description}
               />
             </div>
-            <div className="temp">
-              <h2 className="px-2">{props.data.temp}</h2>
-            </div>
-            <div className="unit">
-              <span>°C</span>
-              <span>|</span>
-              <span>°F</span>
-            </div>
+            <UnitConversion metric={props.data.temp} />
+
             <div className="detail-list">
               <ul>
                 <li>Humidity: {props.data.humidity}%</li>
