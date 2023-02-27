@@ -2,29 +2,27 @@ import React, { useState } from "react";
 import "./UnitConversion.css";
 
 function UnitConversion(props) {
-  const [temp, setTemp] = useState(props.metric);
+  let celsius = Math.round(props.metric);
+  let fahrenheit = Math.round((props.metric * 9) / 5 + 32);
   const [unit, setUnit] = useState("metric");
 
   function showFahrenheit(event) {
     event.preventDefault();
-    setTemp(Math.round((props.metric * 9) / 5 + 32));
     setUnit("fahrenheit");
   }
 
   function showCelsius(event) {
     event.preventDefault();
-    setTemp(props.metric);
     setUnit("metric");
   }
-  let temperature = (
-    <div className="temp">
-      <h2 className="px-2">{temp}</h2>
-    </div>
-  );
+
   if (unit === "metric") {
     return (
       <div className="UnitConversion">
-        {temperature}
+        <div className="temp">
+          <h2 className="px-2">{celsius}</h2>
+        </div>
+
         <div className="unit">
           <span>°C</span>
           <span>|</span>
@@ -39,7 +37,10 @@ function UnitConversion(props) {
   } else {
     return (
       <div className="UnitConversion">
-        {temperature}
+        <div className="temp">
+          <h2 className="px-2">{fahrenheit}</h2>
+        </div>
+
         <div className="unit">
           <span>
             <a href="/" onClick={showCelsius}>
