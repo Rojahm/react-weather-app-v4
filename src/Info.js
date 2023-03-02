@@ -1,7 +1,7 @@
 import React from "react";
 import FormatDate from "./FormatDate";
-import WeatherIcon from "./WeatherIcon";
 import UnitConversion from "./UnitConversion";
+import Icon from "./Icon";
 
 export default function Info(props) {
   return (
@@ -10,10 +10,7 @@ export default function Info(props) {
         <div className="col-8">
           <div className="weather-details">
             <div className="icon">
-              <WeatherIcon
-                icon={props.data.icon}
-                alt={props.data.description}
-              />
+              <Icon icon={props.data.icon} alt={props.data.description} />
             </div>
             <UnitConversion metric={props.data.temp} />
 
