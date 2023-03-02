@@ -21,7 +21,7 @@ function App() {
           </a>{" "}
           and is{" "}
           <a
-            href="https://github.com/Rojahm/react-weather-app-v4"
+            href="https://github.com/Rojahm/react-weather-app-v5"
             target="_blank"
             rel="noreferrer"
             className="App-link"
