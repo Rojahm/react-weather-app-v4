@@ -9,6 +9,13 @@ function Forecast(props) {
   function handleResponse(response) {
     setLoaded(true);
     setForecastData(response.data);
+    console.log(response.data);
+  }
+  function maxTemp() {
+    return Math.round(forecastData.daily[0].temperature.maximum);
+  }
+  function minTemp() {
+    return Math.round(forecastData.daily[0].temperature.minimum);
   }
   if (loaded) {
     return (
@@ -18,11 +25,13 @@ function Forecast(props) {
           <div className="col text-center">
             <ForecastFormatDate date={forecastData.daily[0].time} />
             <div>
-              <Icon icon="clear-sky-day" size="36" />
+              <Icon icon={forecastData.daily[0].condition.icon} size="36" />
             </div>
             <div>
               <span>
-                <span>2° -2°</span>
+                <span>
+                  {maxTemp()}° {minTemp()}°
+                </span>
               </span>
             </div>
           </div>
