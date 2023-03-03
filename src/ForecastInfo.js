@@ -11,20 +11,14 @@ function ForecastInfo(props) {
   }
   return (
     <div className="ForecastInfo">
-      <div className="row">
-        <div className="col text-center">
-          <ForecastFormatDate date={props.data} />
-          <div>
-            <Icon icon={props.data.condition.icon} size="36" />
-          </div>
-          <div>
-            <span>
-              <span>
-                {maxTemp()}° {minTemp()}°
-              </span>
-            </span>
-          </div>
-        </div>
+      <div className="col text-center">
+        <ForecastFormatDate date={props.data} />
+        <Icon icon={props.data.condition.icon} size="36" />
+        <span>
+          <span>
+            {maxTemp()}° {minTemp()}°
+          </span>
+        </span>
       </div>
     </div>
   );

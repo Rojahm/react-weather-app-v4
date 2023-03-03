@@ -14,7 +14,20 @@ function Forecast(props) {
     return (
       <div className="Forecast">
         <hr />
-        <ForecastInfo data={forecastData[0]} />
+        <div className="row">
+          {forecastData.map(function (forecastDay, index) {
+            if (index < 5) {
+              return (
+                <div className="col" key={index}>
+                  <ForecastInfo data={forecastDay} />
+                </div>
+              );
+            } else {
+              return null;
+            }
+          })}
+        </div>
+
         <hr />
       </div>
     );
