@@ -1,7 +1,14 @@
 import React from "react";
 import Icon from "./Icon";
+import axios from "axios";
 
-export default function Forecast() {
+function Forecast(props) {
+  const apiKey = "a7c7f51a8a5abc24e0tb69o4ff6018a3";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${props.city}&key=${apiKey}`;
+  function handleResponse(response) {
+    console.log(response.data);
+  }
+  axios.get(apiUrl).then(handleResponse);
   return (
     <div className="Forecast">
       <hr />
@@ -22,3 +29,4 @@ export default function Forecast() {
     </div>
   );
 }
+export default Forecast;
