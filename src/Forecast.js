@@ -4,7 +4,7 @@ import Icon from "./Icon";
 export default function Forecast() {
   return (
     <div className="Forecast">
-      <h4>from Forecast Componenet</h4>
+      <hr />
       <div className="row">
         <div className="col text-center">
           <div>Sat</div>
@@ -18,6 +18,7 @@ export default function Forecast() {
           </div>
         </div>
       </div>
+      <hr />
     </div>
   );
 }
