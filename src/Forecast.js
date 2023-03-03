@@ -8,14 +8,14 @@ function Forecast(props) {
   const [forecastData, setForecastData] = useState("");
   function handleResponse(response) {
     setLoaded(true);
-    setForecastData(response.data);
+    setForecastData(response.data.daily);
     console.log(response.data);
   }
   function maxTemp() {
-    return Math.round(forecastData.daily[0].temperature.maximum);
+    return Math.round(forecastData[0].temperature.maximum);
   }
   function minTemp() {
-    return Math.round(forecastData.daily[0].temperature.minimum);
+    return Math.round(forecastData[0].temperature.minimum);
   }
   if (loaded) {
     return (
@@ -23,9 +23,9 @@ function Forecast(props) {
         <hr />
         <div className="row">
           <div className="col text-center">
-            <ForecastFormatDate date={forecastData.daily[0].time} />
+            <ForecastFormatDate date={forecastData[0]} />
             <div>
-              <Icon icon={forecastData.daily[0].condition.icon} size="36" />
+              <Icon icon={forecastData[0].condition.icon} size="36" />
             </div>
             <div>
               <span>
