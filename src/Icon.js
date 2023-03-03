@@ -23,7 +23,7 @@ export default function Icon(props) {
   };
   return (
     <div className="Icon">
-      <img src={iconMapping[props.icon]} alt={props.alt} />
+      <img src={iconMapping[props.icon]} alt={props.alt} width={props.size} />
     </div>
   );
 }
