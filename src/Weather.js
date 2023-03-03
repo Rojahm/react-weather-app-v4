@@ -3,6 +3,7 @@ import "./Weather.css";
 import axios from "axios";
 import CircleLoader from "react-spinners/CircleLoader";
 import Info from "./Info";
+import Forecast from "./Forecast";
 
 function Weather(props) {
   const [city, setCity] = useState(props.city);
@@ -54,6 +55,7 @@ function Weather(props) {
       <div className="Weather">
         {form}
         <Info data={weatherData} />
+        <Forecast />
       </div>
     );
   } else {
