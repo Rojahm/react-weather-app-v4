@@ -1,0 +1,5 @@
+.BackgroundVideo video {
+  z-index: -1;
+  width: 100%;
+  object-fit: cover;
+}
