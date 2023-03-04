@@ -4,7 +4,6 @@ import axios from "axios";
 import CircleLoader from "react-spinners/CircleLoader";
 import Info from "./Info";
 import Forecast from "./Forecast";
-import BackgroundVideo from "./BackgroundVideo";
 
 function Weather(props) {
   const [city, setCity] = useState(props.city);
@@ -54,7 +53,6 @@ function Weather(props) {
   if (weatherData.ready) {
     return (
       <div className="Weather">
-        <BackgroundVideo description={weatherData.icon} />
         {form}
         <Info data={weatherData} />
         <Forecast city={weatherData.city} />
