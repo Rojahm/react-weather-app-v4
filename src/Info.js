@@ -34,14 +34,14 @@ export default function Info(props) {
           </ul>
         </div>
       </div>
-      <div className="weather-menu">
+      {/* <div className="weather-menu">
         <div className="weather-menu-item">Temperature</div>
         <span className="weather-menu-border"> </span>
         <div className="weather-menu-item">Humidity</div>
 
         <span className="weather-menu-border"> </span>
         <div className="weather-menu-item">Wind</div>
-      </div>
+      </div> */}
     </div>
   );
 }
